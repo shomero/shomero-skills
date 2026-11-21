@@ -79,6 +79,7 @@
     { "name": "review-pr", "path": "skills/review-pr", "category": "workflow", "requires": [] },
     { "name": "ui-automation", "path": "skills/ui-automation", "category": "workflow", "requires": ["automation"] },
     { "name": "probe", "path": "skills/probe", "category": "workflow", "requires": ["automation", "mvi"] },
+    { "name": "e2e-cases", "path": "skills/e2e-cases", "category": "workflow", "requires": ["automation"] },
     { "name": "design-references", "path": "skills/design-references", "category": "workflow", "requires": [] },
     { "name": "worktree-emulator", "path": "skills/worktree-emulator", "category": "workflow", "requires": ["scripts"] },
 

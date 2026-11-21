@@ -22,7 +22,7 @@ Each skill is a folder with one `SKILL.md`, short and precise: the shape, the ru
 | Features | `feature-auth`, `feature-auth-hard-gate`, `feature-auth-soft-gate`, `feature-startup`, `feature-network`, `feature-logging`, `feature-analytics`, `feature-monitoring`, `feature-settings`, `feature-localization`, `feature-deep-links` |
 | Build | `gradle-conventions`, `build-flavors`, `r8-release`, `kmp-web-target`, `web-page-loader` |
 | Testing | `testing-kmp`, `coverage` |
-| Workflow | `open-pr`, `review-pr`, `ui-automation`, `probe`, `design-references`, `worktree-emulator` |
+| Workflow | `open-pr`, `review-pr`, `ui-automation`, `probe`, `e2e-cases`, `design-references`, `worktree-emulator` |
 | Third parties | `codemagic`, `firebase`, `google-sign-in`, `kotzilla`, `mixpanel`, `revenuecat`, `supabase` |
 
 ## The example project
@@ -41,7 +41,7 @@ Some skills describe code the reader's project may not have yet: a base class, a
 | `settings` | `feature-settings`, `feature-auth-soft-gate` |
 | `localization` | `feature-localization` |
 | `design-system` | `design-system`, `ui-form` |
-| `automation` | `ui-automation`, `probe`, `compose-screen` |
+| `automation` | `ui-automation`, `probe`, `e2e-cases`, `compose-screen` |
 | `deeplinks` | `feature-deep-links` |
 | `build-logic` | `kmp-module-layout`, `gradle-conventions`, `build-flavors` |
 | `scripts` | `coverage`, `worktree-emulator`, `codemagic` |
