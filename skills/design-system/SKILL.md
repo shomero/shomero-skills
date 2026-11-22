@@ -1,6 +1,6 @@
 ---
 name: design-system
-description: Structure a Compose Multiplatform design system — one AppTheme with light/dark (and contrast) schemes, typography, shapes, and spacing and motion tokens as extensions on MaterialTheme, theme mode persisted as a setting, layouts that glide across width limits, components that are stateless and slot-based with previews, icons as lazy ImageVectors, the Rule of Three for what moves in, and how a screen is built from it: tokens and roles instead of raw values, the project's components first, hover and press tints clipped to the shape, and text people can select. Use when adding a component, a color or token, an icon, or theming, or when building or reviewing a screen's look.
+description: Structure a Compose Multiplatform design system — one AppTheme with light/dark (and contrast) schemes, typography, shapes, and spacing and motion tokens as extensions on MaterialTheme, theme mode persisted as a setting, layouts that glide across width limits, components that are stateless and slot-based with previews, icons as lazy ImageVectors, the Rule of Three for what moves in, and how a screen is built from it: tokens and roles instead of raw values, the project's components first, hover and press tints clipped to the shape, and selection only on text people copy. Use when adding a component, a color or token, an icon, or theming, or when building or reviewing a screen's look.
 ---
 
 # Design system
@@ -55,9 +55,11 @@ val StandardEasing = CubicBezierEasing(0.2f, 0f, 0f, 1f)
 
 ## Text people can copy
 
-- **Every screen's text can be selected and copied** (a title, an id, an error): one `SelectionContainer` around the screens at the app's frame, not one per text, so a selection runs across a screen and no new screen forgets it. Text in a pressed row stays selectable: a press presses, a drag selects.
-- **Controls stay out of it**: the design system's button, chip and tab wrap their label in `DisableSelection`, so a label is pressed, never selected. Text in a menu stays unselectable.
-- **A dialog is a window of its own** and gets its own `SelectionContainer` in the design system's dialog.
+- **Selection is opt-in.** No `SelectionContainer` around the app's frame, the screens or a whole dialog: a drag over a clickable row, a card, a rail or a header must not highlight its words. Rows, cards, rails, headers, labels and controls are never selectable.
+- **Copyable text is the exception, and wraps itself** in a `SelectionContainer` where it is drawn: the agent's or a chat's messages, both sides (in the design system's message and bubble, one container across a message's paragraphs); ids people quote, such as a ticket's number or a task's key on its own page; addresses, links, commands and logs; and error details someone may paste into a ticket (the shared error text).
+- **Not inside what opens something.** A key in a row that opens the task stays plain; the same key over the task's own page is copyable. A component that is shown both ways takes a `copyable` flag.
+- **A dialog keeps selection only around what it shows to copy**, such as a link or a code, never around its whole content.
+- **Controls still wrap their label in `DisableSelection`** (button, chip, tab), so a label inside copyable text is pressed, never selected. Text in a menu stays unselectable.
 
 ## What moves in
 
